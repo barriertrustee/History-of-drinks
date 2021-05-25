@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+
+
+
+/* ----------------
+--- !ANCHOR NAV ---
+---------------- */
+
+header {
+    background-color: black;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #ffffff28;
+    justify-content: space-between;
+}
+
+nav>img {
+    margin-left: 2em;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav li {
+    list-style: none;
+    margin-right: 0em;
+    display: flex;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav p {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: 0.2em;
+    font-weight: 700;
+}
+
+nav img {
+    width: 20%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+li:hover img,
+li:focus img,
+li:active img {
+    -webkit-transform: scale(1.2) rotate(12deg);
+    transform: scale(1.2) rotate(12deg);
+}

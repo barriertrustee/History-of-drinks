@@ -17,6 +17,7 @@ header {
     display: inline-block;
     width: 100%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: fixed;
 }
 
 nav {
@@ -28,18 +29,21 @@ nav {
 }
 
 nav>img {
+    width: 30%;
     margin-left: 2em;
+    opacity: 0.8;
 }
 
-nav ul {
+nav>ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-nav li {
+nav > ul > li {
     list-style: none;
     margin-right: 0em;
+    width: 18%;
     display: flex;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -47,21 +51,31 @@ nav li {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
+    position: initial;
 }
 
 nav a {
     text-decoration: none;
     color: white;
+    opacity: 0.8;
 }
 
 nav p {
     font-size: 1.5rem;
     display: inline-block;
-    margin-right: 0.2em;
+    margin-right: 0.5em;
     font-weight: 700;
 }
 
-nav img {
+li:hover a,
+li:focus a,
+li:active a{
+    color:white;
+    opacity: 1;
+}
+
+li img {
+    opacity: 0.8;
     width: 20%;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -78,4 +92,37 @@ li:focus img,
 li:active img {
     -webkit-transform: scale(1.2) rotate(12deg);
     transform: scale(1.2) rotate(12deg);
+    opacity: 1;
 }
+
+.sub-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    top: 120%;
+    visibility: hidden;
+}
+
+.sub-list li {
+    border: 0.1em solid white;
+    background-color: rgba(41, 41, 41, 0.671);
+    color: white;
+    list-style: none;
+    text-align: center;
+    padding: 1em 0.5em;
+    left:0;
+    right:20%;
+}
+
+.sub-list li:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+
+li:hover .sub-list,
+li:focus .sub-list,
+li:active .sub-list{
+    visibility: visible;
+} 

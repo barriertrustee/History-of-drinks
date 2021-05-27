@@ -1,3 +1,7 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+
 body {
     margin: 0;
     box-sizing: border-box;
@@ -7,10 +11,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
-
 /* ----------------
 --- !ANCHOR NAV ---
 ---------------- */
@@ -129,35 +129,130 @@ li:focus-within .sub-list {
 ----------------- */
 
 footer {
-    background-color: black;
+    background-color: #000000cb;
     color: white;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-auto-rows: minmax(200px, auto);
+    ;
+    column-gap: 1em;
 }
 
-footer h2 {
-    font-size: 2rem;
-    text-align: center;
-    font-family: 'Lobster', cursive;
-}
-
-footer .logo {
+.description {
+    margin: 1em 0 2em 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 20%;
-    margin: 0 0 2em 2em;
+    grid-area: 1/2/3/1;
 }
 
-footer .img-logo {
+.description h1 {
+    font-family: 'Lobster Two', cursive;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.description p {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+}
+
+.description img {
+    width: 10%;
+}
+
+.phone-number {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.phone-number p {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-left: 0.5em;
+}
+
+.footer-logo {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    width: 50%;
+}
+
+.footer-list {
     display: flex;
     justify-content: space-around;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-footer img {
-    width: 15%;
-    border-radius: 100%;
+.footer-list h1 {
+    font-family: 'Lobster Two', cursive;
+    font-size: 2.5rem;
+    margin-top: 0.9em;
 }
 
-footer li {
-    list-style: none;
+.footer-list li {
+    list-style: "";
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 0.5em;
+    letter-spacing: 0.05em;
+}
+
+.footer-list li:hover,
+.footer-list li:focus{
+      color:lightblue;
+      cursor: pointer;
+}
+
+.footer-list li:active{
+    color:lightslategray;
+    cursor: pointer;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0em;
+}
+
+.subscribe h1 {
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.subscribe h2 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.sub-subscribe {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe input[type="email"] {
+    width: 40%;
+    height: 50px;
+    font-size: 1.5rem;
+    border: 0.1em solid darkgray;
+}
+
+.subscribe button {
+    font-size: 1.5rem;
+    width: 20%;
+    border: 0.1em solid darkgray;
+    border-left: 0;
+}
+
+.subscribe button:active{
+    background-color: rgb(204, 204, 204);
 }

@@ -2,9 +2,13 @@ body {
     margin: 0;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.87);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 
 /* ----------------
@@ -17,11 +21,11 @@ nav {
     width: 100%;
     background-color: #000000cb;
     justify-content: space-between;
-    font-family: 'Mate SC', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav>img {
-    width: 20%;
+    width: 30%;
     margin-left: 2em;
     opacity: 0.95;
 }
@@ -35,8 +39,8 @@ nav>ul {
 }
 
 nav>ul>li {
+    width: fit-content;
     list-style: none;
-    width: 18%;
     display: flex;
     justify-content: flex-end;
     vertical-align: middle;
@@ -45,7 +49,6 @@ nav>ul>li {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    position: initial;
 }
 
 nav a {
@@ -59,7 +62,7 @@ nav p {
     display: inline-block;
     margin-right: 0.4em;
     font-weight: 400;
-    
+    text-align: center;
 }
 
 
@@ -89,13 +92,13 @@ li:active img {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    left: 30%;
-    right: -15%;
+    left: 25%;
     top: 100%;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.7s linear;
     font-size: 1.1rem;
+    width: 90%;
 }
 
 .sub-list li {
@@ -104,9 +107,10 @@ li:active img {
     color: white;
     list-style: none;
     text-align: center;
-    padding: 1em 0.5em;
+    padding: 1em 0;
     left: 0;
     right: 20%;
+    font-size: 0.9em;
 }
 
 .sub-list li:hover {
@@ -118,4 +122,42 @@ li:hover .sub-list,
 li:focus-within .sub-list {
     visibility: visible;
     opacity: 1;
+}
+
+/* -----------------
+-- !ANCHOR FOOTER --
+----------------- */
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+footer h2 {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+
+footer .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+    margin: 0 0 2em 2em;
+}
+
+footer .img-logo {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer img {
+    width: 15%;
+    border-radius: 100%;
+}
+
+footer li {
+    list-style: none;
 }

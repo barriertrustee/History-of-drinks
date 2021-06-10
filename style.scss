@@ -292,9 +292,15 @@ footer {
 .home-h1 {
     @include primary-font(700);
     font-size: 7rem;
-    margin-left: 8rem;
     padding: 2rem 0;
     text-align: center;
     // background-image: linear-gradient(hsl(197, 100%, 45%), hsl(197, 100%, 35%));
     color: rgba(0, 0, 0, 0.671);
+}
+
+.home-main {
+    margin-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    width: auto;
 }

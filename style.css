@@ -332,8 +332,19 @@ footer {
   font-family: 'Lobster Two', cursive;
   font-weight: 700;
   font-size: 7rem;
-  margin-left: 8rem;
   padding: 2rem 0;
   text-align: center;
   color: rgba(0, 0, 0, 0.671);
+}
+
+.home-main {
+  margin-left: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
 }

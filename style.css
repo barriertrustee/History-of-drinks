@@ -129,7 +129,7 @@ footer {
       grid-template-columns: 3fr 5fr;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-  position: relative;
+  position: absolute;
   bottom: 0;
 }
 
@@ -331,8 +331,9 @@ footer {
 .home-h1 {
   font-family: 'Lobster Two', cursive;
   font-weight: 700;
-  font-size: 9rem;
+  font-size: 7rem;
   padding: 2rem 0;
+  margin-left: 8rem;
   text-align: center;
   color: black;
 }

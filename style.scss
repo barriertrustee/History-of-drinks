@@ -136,7 +136,7 @@ footer {
     display: grid;
     grid-template-columns: 3fr 5fr;
     grid-template-rows: auto auto;
-    position: relative;
+    position: absolute;
     bottom: 0;
 }
 
@@ -291,8 +291,9 @@ footer {
 ----------------------- */
 .home-h1 {
     @include primary-font(700);
-    font-size: 9rem;
+    font-size: 7rem;
     padding: 2rem 0;
+    margin-left: 8rem;
     text-align: center;
     // background-image: linear-gradient(hsl(197, 100%, 45%), hsl(197, 100%, 35%));
     color: rgb(0, 0, 0);

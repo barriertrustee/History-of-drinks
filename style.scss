@@ -322,7 +322,7 @@ footer {
     display: inline-block;
 
     h1 {
-        font-size: 6rem;
+        font-size: clamp(4rem, 3vw, 8rem);
         @include primary-font(700);
         color: rgba(0, 0, 0, 0.842);
         text-align: center;
@@ -330,6 +330,7 @@ footer {
     }
 
     p {
+        font-size: clamp(1rem, 2vw, 5rem);
         @include secondary-font();
         display: block;
         font-size: 2rem;

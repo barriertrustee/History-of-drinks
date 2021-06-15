@@ -8,8 +8,9 @@
     font-weight: $weight;
 }
 
-@mixin secondary-font() {
+@mixin secondary-font($weight: 400) {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: $weight;
 }
 
 @mixin hover-effect($time:0.3s) {
@@ -17,8 +18,6 @@
     vertical-align: middle;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     transform: perspective(1px) translateZ(0);
-    transition-duration: $time;
-    transition-property: transform;
 }
 
 /* ----------------------
@@ -48,7 +47,7 @@ html {
 }
 
 body {
-    min-height: 170vh;
+    min-height: 200vh;
     left: 0;
     position: relative;
 }
@@ -59,70 +58,179 @@ body {
 /* -----------------------
 --- SECTION Navigation ---
 ----------------------- */
-
-nav {
-    background-color: $bgcolor;
-    position: fixed;
+header {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    left: 0;
-    width: 8rem;
-    transition: width 0.3s ease;
-
-    h1 {
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    &:hover {
-        width: 20rem;
-
-        h1 {
-            visibility: visible;
-            opacity: 1;
-        }
-    }
-}
-
-.nav-element {
-    display: flex;
-    align-items: center;
-    height: 8rem;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-        background-color: lighten($bgcolor, 12.5);
-
-        h1 {
-            color: hsl(197, 100%, 75%);
-        }
-
-        img {
-            transform: rotate(20deg);
-        }
-    }
+    position: relative;
 
     img {
-        width: 4rem;
-        margin: 0 2rem 0 1.5rem;
-        @include hover-effect();
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        filter: brightness(0.8) opacity(0.9);
     }
 
-    h1 {
-        margin-top: 0;
+    nav {
+        margin: auto;
+        margin-top: 2em;
         margin-bottom: 0;
-        font-size: 3.5rem;
-        @include primary-font(700);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
         color: white;
-        transition: opacity 0.4s ease, color 0.3s ease 0.1s;
+
+        h1 {
+            font-size: 6.5rem;
+            @include primary-font(700);
+            text-decoration: underline;
+            margin-bottom: 0.2rem;
+        }
+
+        ul {
+            display: flex;
+            width: 45%;
+            justify-content: space-between;
+            min-width: 600px;
+            margin-bottom: 0.2rem;
+        }
+
+        li {
+            padding: 0.25em 0.75em;
+            list-style: none;
+            font-size: 2.5rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 1em;
+            @include hover-effect();
+            transition: background-color 0.3s, transform 0.2s;
+
+            &:hover,
+            &:focus {
+                background-color: hsla(0, 0%, 50%, 0.884);
+                box-shadow: 3px 3px 15px 5px #000000;
+            }
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    p {
+        font-family: monospace;
+        margin: auto;
+        margin-top: 5rem;
+        font-size: 7rem;
+        width: 54rem;
+        color: white;
+        text-align: center;
+
+        &::after {
+            content: '';
+            font-family: monospace;
+            overflow: hidden;
+            border-right: .1em solid white;
+            animation: typing 15s infinite, blink-caret .75s step-end infinite;
+            vertical-align: bottom;
+            display: inline-block;
+        }
     }
 }
 
 /* ----------------------
 -------- !SECTION -------
 ---------------------- */
+@keyframes typing {
+
+    0%,
+    15%,
+    100% {
+        width: 43%;
+        content: 'coffee';
+        animation-timing-function: steps(6);
+    }
+
+    15% {
+        animation-timing-function: steps(0);
+    }
+
+    20% {
+        animation-timing-function: steps(3);
+        width: 0;
+    }
+
+    25% {
+        width: 22.5%;
+        animation-timing-function: steps(3);
+        content: 'tea';
+    }
+
+    37.5% {
+        width: 22.5%;
+        animation-timing-function: steps(3);
+        content: 'tea';
+    }
+
+    45% {
+        animation-timing-function: steps(4);
+        width: 0;
+    }
+
+    50% {
+        width: 29%;
+        animation-timing-function: steps(4);
+        content: 'beer';
+    }
+
+    62.5% {
+        width: 29%;
+        animation-timing-function: steps(4);
+        content: 'beer';
+    }
+
+    67.5% {
+        animation-timing-function: steps(4);
+        width: 0;
+    }
+
+    75% {
+        width: 29%;
+        animation-timing-function: steps(4);
+        content: 'soda';
+    }
+
+    87.5% {
+        width: 29%;
+        animation-timing-function: steps(4);
+        content: 'soda';
+    }
+
+    92.5% {
+        animation-timing-function: steps(6);
+        width: 0;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+
+
 
 
 
@@ -173,6 +281,7 @@ footer {
         width: 10%;
         margin-right: 2em;
         @include hover-effect();
+        transition: transform 0.3s;
 
         &:hover,
         &:focus,
@@ -190,6 +299,7 @@ footer {
 
     img {
         width: 50%;
+        transition: transform 0.3s;
         @include hover-effect();
 
         &:hover,
@@ -233,12 +343,12 @@ footer {
 
         &:hover,
         &:focus {
-            color: hsl(197, 100%, 70%);
+            color: hsl(49, 100%, 46%);
             cursor: pointer;
         }
 
         &:active {
-            color: hsl(197, 100%, 45%);
+            color: hsl(44, 57%, 41%);
             cursor: pointer;
         }
     }
@@ -289,12 +399,3 @@ footer {
 /* -----------------------
 --- SECTION Home Page ----
 ----------------------- */
-.home-h1 {
-    @include primary-font(700);
-    font-size: 7rem;
-    padding: 2rem 0;
-    margin-left: 8rem;
-    text-align: center;
-    // background-image: linear-gradient(hsl(197, 100%, 45%), hsl(197, 100%, 35%));
-    color: rgb(0, 0, 0);
-}

@@ -52,5 +52,5 @@
   <path
      d="M 84,52 V 92 H 60 V 68 H 36 V 92 H 12 V 52 H 0 L 48,4 96,52 Z M 80,28.372 V 8 H 68 v 8.372 z"
      id="path2"
-     style="stroke-width:4;fill:#ffffff;fill-opacity:1" />
+     style="stroke-width:4;fill-opacity:1; fill:#ffffff" />
 </svg>

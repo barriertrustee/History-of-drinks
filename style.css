@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  min-height: 200vh;
+  min-height: 250vh;
   left: 0;
   position: relative;
 }
@@ -39,10 +39,15 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
 header img {
+  top: 0;
+  bottom: 0;
   z-index: -1;
   position: absolute;
   width: 100%;
@@ -52,7 +57,8 @@ header img {
 
 header nav {
   margin: auto;
-  margin-top: 2em;
+  margin-top: 0;
+  padding-top: 3rem;
   margin-bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,7 +79,7 @@ header nav h1 {
   font-family: 'Lobster Two', cursive;
   font-weight: 700;
   text-decoration: underline;
-  margin-bottom: 0.2rem;
+  vertical-align: middle;
 }
 
 header nav ul {
@@ -84,8 +90,7 @@ header nav ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-width: 600px;
-  margin-bottom: 0.2rem;
+  min-width: 625px;
 }
 
 header nav li {
@@ -123,9 +128,9 @@ header nav a {
 }
 
 header p {
-  font-family: monospace;
   margin: auto;
-  margin-top: 5rem;
+  font-family: monospace;
+  font-weight: 400;
   font-size: 7rem;
   width: 54rem;
   color: white;
@@ -137,10 +142,29 @@ header p::after {
   font-family: monospace;
   overflow: hidden;
   border-right: .1em solid white;
-  -webkit-animation: typing 15s infinite, blink-caret .75s step-end infinite;
-          animation: typing 15s infinite, blink-caret .75s step-end infinite;
+  -webkit-animation: typing 12s infinite, blink-caret .75s step-end infinite;
+          animation: typing 12s infinite, blink-caret .75s step-end infinite;
   vertical-align: bottom;
   display: inline-block;
+}
+
+.nav-coffee {
+  background-image: url(images/coffee.jpg);
+  padding-bottom: 3rem;
+}
+
+.li-active {
+  background-color: rgba(179, 167, 0, 0.884);
+  -webkit-box-shadow: 3px 3px 15px 5px #000000;
+          box-shadow: 3px 3px 15px 5px #000000;
+}
+
+.li-active:hover, .li-active:focus, .li-active:active {
+  background-color: rgba(179, 167, 0, 0.884);
+  -webkit-box-shadow: 3px 3px 15px 5px #000000;
+          box-shadow: 3px 3px 15px 5px #000000;
+  -webkit-transform: initial;
+          transform: initial;
 }
 
 /* ----------------------
@@ -319,7 +343,7 @@ footer {
       grid-template-columns: 3fr 5fr;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
 
@@ -518,3 +542,74 @@ footer {
 /* -----------------------
 --- SECTION Home Page ----
 ----------------------- */
+.home-sec {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  row-gap: 7.5%;
+  -webkit-column-gap: 10%;
+          column-gap: 10%;
+  width: 75%;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5rem;
+  margin-bottom: 15rem;
+}
+
+.home-sec .home-quote {
+  background-color: burlywood;
+  padding: 4em;
+  border-radius: 5rem;
+}
+
+.home-sec h1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: -2;
+  grid-area: 1/3/2/1;
+  font-size: 6rem;
+  font-family: 'Lobster Two', cursive;
+  font-weight: 700;
+  border-bottom: 1rem solid black;
+}
+
+.home-sec img {
+  width: 100%;
+  border-radius: 20rem;
+}
+
+.home-sec q {
+  font-size: clamp(1.6rem, 1.7vw, 3rem);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+}
+
+.home-sec p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  margin-top: 1em;
+  font-size: clamp(2rem, 1.8vw, 3rem);
+}
+
+.home-sec-reverse {
+  -ms-grid-columns: 3fr 2fr;
+      grid-template-columns: 3fr 2fr;
+}
+
+.home-sec-reverse h1 {
+  text-align: right;
+}
+
+.home-sec-reverse img {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: -1;
+  grid-area: 2/3/3/2;
+}

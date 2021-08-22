@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+$primary-font: 'Open Sans',
+sans-serif;
+$width: 50%;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/coffee1.jpg);
+
+    h1 {
+        margin: .5em;
+        padding: 0 .25em;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        font-size: clamp(3rem, calc(.5rem + 5vw), 10rem);
+        font-family: $primary-font;
+        font-weight: 700;
+    }
+}
+
+nav {
+    width: 100%;
+    border: 2px solid black;
+    font-size: clamp(1rem, calc(.875rem + 1.5vw), 10rem);
+
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: .5em .5em;
+        background-color: rgba(0, 0, 0, 0.75);
+
+        li {
+            padding: .1em 0 .4em 0;
+            list-style: none;
+            background-image: linear-gradient(white, white);
+            background-size: 0% .25em;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            transition: .5s;
+
+            &:hover {
+                background-size: 100% .25em;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-weight: 700;
+                font-family: $primary-font;
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $primary-font;
+
+    section {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.5em;
+        margin-bottom: 1rem;
+        background-color: rgba(255, 255, 255, 0.6);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-size: cover;
+            background-position: right;
+            filter: opacity(0.3) brightness(1.25);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: clamp(2rem, calc(1rem + 1.5vw), 5rem);
+        }
+
+        p {
+            margin-top: .5em;
+            font-size: clamp(1.25rem, calc(.5rem + 1vw), 3rem);
+        }
+
+        button {
+            font-size: clamp(1.5rem, calc(1.5rem + 1.5vw), 5rem);
+            margin-top: 1em;
+            padding: .2em .4em;
+            font-weight: 700;
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+
+    .main-intro {
+        &::before {
+            background-image: url(images/coffee4.jpg);
+        }
+    }
+
+    .main-history::before {
+        background-image: url(images/coffee3.jpg);
+    }
+
+    .main-fact::before {
+        background-image: url(images/coffee2.jpg);
+    }
+}
+
+footer {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    font-family: $primary-font;
+
+    p {
+        font-size: clamp(1rem, calc(.25rem + 1vw), 5rem);
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: white;
+        padding: 1em 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        section {
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0 $width, transparent 0 100%);
+            background-color: transparent;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+
+            &::before {
+                filter: none;
+            }
+
+            h1 {
+                width: $width;
+            }
+
+            p {
+                width: $width - 2.5%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    $width: 40%;
+
+    main {
+        section {
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0 $width, transparent 0 100%);
+            background-color: transparent;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+
+            &::before {
+                filter: none;
+            }
+
+            h1 {
+                width: $width;
+            }
+
+            p {
+                width: $width - 2.5%;
+            }
+        }
+
+        .main-fact::before {
+            background-position: top right;
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+    $width: 35%;
+
+    main {
+        section {
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0 $width, transparent 0 100%);
+            background-color: transparent;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+
+            &::before {
+                filter: none;
+            }
+
+            h1 {
+                width: $width;
+            }
+
+            p {
+                width: $width - 3.5%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:2560px) {
+    $width: 27.5%;
+
+    main {
+        section {
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0 $width, transparent 0 100%);
+            background-color: transparent;
+            align-items: flex-start;
+            padding: 2rem 4rem;
+            margin-bottom: 2rem;
+
+            &::before {
+                filter: none;
+            }
+
+            h1 {
+                width: $width;
+            }
+
+            p {
+                width: $width - 3.5%;
+            }
+        }
+    }
+}
